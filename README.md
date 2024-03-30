@@ -1,4 +1,4 @@
-# Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/02760a0f-17c0-4ca6-a8d4-9768f92ce696)![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/2346e6fc-2176-4a13-b7d4-11b8b4b6a37c)![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/22ae1bfe-5e79-47e4-bf16-879c73d2c957)![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/bcbf0578-a172-42ab-9ecc-aed989e1d87b)![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/a420e848-6fc6-4758-b273-ce0cccfe2349)# Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE
 This repository documents my progress in the VSDIAT Advanced Physical Design course, where I utilized the SkyWater 130nm PDK and open-source EDA tools.
 
 Day 1
@@ -8,6 +8,7 @@ Day_1 Introduction to Open-Source EDA, OpenLANE & Sky130PDK
 ![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/9882fc9e-c7c8-47f4-91c1-72c67e40afa4)
 
 # SKY130 Day 1: Introduction to OpenSource EDA, OpenLANE, and SKY130 PDK
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/378dc88a-9c4d-4991-9ac2-35dba7ab2af5)
 
 ## Communicating with Computers
 
@@ -20,6 +21,7 @@ The Arduino circuit board, a widely used microcontroller platform, features a Sy
 The RISC-V Instruction Set Architecture (ISA) serves as the language for computers. Compiling a C program for hardware involves converting it into an assembly language like RISC V, then into machine language, and eventually implementing it in hardware.
 
 ### Bridging Software Applications to Hardware
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/83084ff3-338f-411b-9433-a515966043bb)
 
 Software applications, or apps, run on hardware like laptops, mobile phones, and tablets, powered by chips. These apps are coded in complex programs that require conversion into binary or machine language. This conversion is facilitated by system software, including operating systems, compilers, and assemblers.
 
@@ -53,6 +55,10 @@ Setting up a design in OpenLANE involves preparing the design, ensuring that the
 
 ### Reviewing Files After Design Prep and Running Synthesis
 
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/e2e71354-57d0-466b-82f7-8e6e8fc54045)
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/81d5ea45-4e6e-488d-b8f3-0112794ed955)
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/d55fe62b-4ab5-42f7-b0e5-7d38b137898b)
+
 After preparing the design, running synthesis converts the abstract netlist into a program. This step involves running yosys RTL synthesis, ABC scripts for technology mapping, and openSTA, providing valuable statistics and reports for analysis.
 
 ### Characterizing Synthesis Results
@@ -72,10 +78,15 @@ Overall, the workshop provided a comprehensive overview of open-source EDA tools
 # SKY130 Day 2: Exploring Floorplans and Introduction to Library Cells
 ## Understanding Chip Floor Planning Concepts
 ### Utilisation Factor and Aspect Ratio
-
 The initial step in physical design involves defining the width and height of the core and die. Starting with a basic netlist, we create a symbolic diagram, which will later be transformed into physical designs. Each cell, whether a gate or a specific cell like a flip-flop, is given standard dimensions. For example, each unit is 1x1 unit in size, so with 4 gates/flip-flops, the total size of the silicon wafer is 4 sq. units.
 
 All logical cells are placed inside the core, which is part of the die. The utilization factor is the ratio of the area occupied by the netlist to the total core area. Although the utilization factor may theoretically reach 100%, it typically remains around 50%. The aspect ratio is the ratio between height and width, where a square chip has an aspect ratio of 1, while a rectangular chip has a different ratio.
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/6714f7ab-a4ff-43d7-965f-666b573ae4df)
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/d864a600-8515-41b0-9fb8-1deaf749b351)
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/4a328f34-fc1a-4871-a0cd-37e48b9a8977)
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/fe1daba4-c571-4591-a5be-f9bed41af305)
+
+
 
 ### Understanding Pre-Placed Cells
 
@@ -98,6 +109,9 @@ In chip design, the placement of input and output ports, clock ports, and logica
 Before running the floorplan, configuration variables or switches must be set, which are located in the openlane/configuration directory. The configuration settings are stored in openlane/designs/[design-date]/config.tcl. The vertical and horizontal metal specifications in OpenLANE are set one higher than what is specified. The floorplan can be executed in OpenLANE using the command run_floorplan.
 
 ### Reviewing Floorplan Files and Layout
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/761bebe5-e3cf-43be-84db-23b95316dc46)
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/4eebb910-289c-4240-bf29-4aa5281e4307)
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/dd93a955-3c65-4924-8ffc-b8b52d8c6f40)
 
 After running the floorplan, the results are stored in a design exchange format, containing the die area and positions. The die area is in database units, where 1 micron equals 1000 database units. The floorplan layout can be reviewed using Magic, a layout tool, to inspect the layout and ensure proper placement of components.
 
@@ -125,6 +139,8 @@ Characterisation involves reading SPICE model files, netlists, recognizing buffe
 
 ## General Timing Characterisation Parameters
 ### Timing Threshold Definitions
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/75ba40e8-d8c6-4b34-ae7a-7b1c318c5e59)
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/4eaa2114-1eef-4c79-a775-49107a7e2a4e)
 
 Understanding timing thresholds is crucial for ensuring proper circuit behavior. Propagation delay is calculated as the time taken for an output to respond to a change in the input, while transition time is the time taken for a signal to change from one logic level to another. Proper threshold values must be selected to avoid unexpected results and ensure stable operation of the circuit.
 
@@ -158,6 +174,16 @@ In conclusion, understanding the various aspects of chip floor planning, library
 # SKY130 DAY 3: Design Library Cell Using Magic Layout and NGSPICE Characterization
 ## Labs for CMOS Inverter NGSPICE Simulations
 ### IO Placer Revision
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/6f1ea3e6-1da3-4716-a5eb-c755a22b292c)
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/eda6e921-9784-408e-ad99-5a8b89cb4ceb)
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/00ff30bf-de73-4f9a-b5bc-3520cf9270ec)
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/dcbb9e0e-805f-48da-b52d-7bc8f8fec197)
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/e286c847-ec5f-4263-b6a8-468f241e47fb)
+
 
 Configuration changes in OpenLANE can be made on the fly within the shell itself. The IO Mode is typically set to "random equidistant." To change this, use the following command after the floorplan step: **set ::env(FP_IO_MODE) 2**. This command will change the IO (input-output) pins to mode 2, where they are no longer equidistant (as in the default mode, which is 1).
 
@@ -183,10 +209,12 @@ For SPICE simulation, follow these steps:
 4. Type _display_ to choose nodes to be plotted. Typing _plot out vs in_ will plot them on a graph.
 
 ### Switching Threshold Vm
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/5004d006-3fbb-40ba-9a1c-8dc9f6490ce9)
 
 The switching threshold is the point where the input voltage equals the output voltage, and both PMOS & NMOS are in the saturation region. This state can lead to leakage and potential short circuits.
 
 ### Static and Dynamic Simulation of CMOS Inverter
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/7a560260-40b4-4249-aa4f-5575c7e88221)
 
 To find Vm, use DC TRANSFER ANALYSIS. Simulation is a sweep from 0V to 2.5V by 0.05V steps.
 
@@ -217,7 +245,12 @@ The 16 MASK CMOS Fabrication process involves several steps:
 ## SKY130 Tech File Labs
 ### Lab Steps To Create Final SPICE Deck using SKY130 Tech
 
-Modify the default SPICE deck file using Sky130 to plot a transient response by editing it to include transient analysis. Load the SPICE file for simulation in NGSPICE using the command _ngspice sky130A_inv.spice_.
+Modify the default SPICE deck file using Sky130 to plot a transient response by editing it to include transient analysis. Load the SPICE file for simulation in NGSPICE using the![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/369559c5-fdac-4e0b-ad63-805f0cafa9f4)
+ command _ngspice sky130A_inv.spice_.
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/47a2bf89-0d3e-4fa7-9fd8-bd587eeea96c)
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/87077171-b18e-417e-b21a-82963bab2bb2)
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/0e3abd0a-4e72-4aae-b7e3-f8efa0b1888a)
+![Uploading image.png…]()
 
 ### Lab Steps to Characterize Inverter using SKY130 Model Files
 
@@ -342,21 +375,18 @@ The file `sky130_inv.mag` located in the `vsdstdcelldesign` directory contains i
 
 The `tracks.info` file contains track information. Before and after changing the grid values:
 
-[Image 1]
 
 Hence, we are able to satisfy the first guideline.
 
-[Image 2]
 
 Then, we are able to satisfy the second guideline as follows:
 
-[Image 3]
 
 ### Converting Magic Layout to STD Cell LEF
 
 LEF (Library Exchange Format) files contain information about the standard cell library used in the design, detailing geometric shapes, sizes, layers, and other physical properties of individual cells or macros within the library. The instructions to set the port definitions are available [here](https://github.com/nickson-jose/vsdstdcelldesign#create-port-definition). Next, save the `.mag` file with a new filename by typing `lef write` in the tkcon terminal, which will generate a new `.lef` file with the new filename:
 
-[Image 4]
+
 
 ### Introduction of Timing Libraries and Steps To Include a New Cell in Synthesis
 
@@ -449,6 +479,9 @@ Clock Tree Synthesis (CTS) is a crucial step in the physical design flow of an A
 
 #### Importance of a Good Clock Tree
 
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/0e2fa284-fa2e-4e7a-86c2-23679d36615e)
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/1be062c5-b205-4028-8017-e1faf9915546)
+
 - **Clock Distribution**: The clock signal needs to be distributed evenly and with minimum skew to all sequential elements. A well-designed clock tree ensures that all flip-flops receive the clock signal at the same time, reducing setup and hold time violations.
 
 - **Clock Jitter**: Clock jitter, caused by noise and variations in the clock signal, can lead to timing violations and affect overall chip performance. A good clock tree minimizes jitter by maintaining signal integrity and reducing noise.
@@ -468,6 +501,17 @@ Clock Tree Synthesis (CTS) is a crucial step in the physical design flow of an A
 - **Clock Tree Optimization**: Clock tree optimization involves balancing the clock tree, optimizing buffer placement, and minimizing clock skew. This step is crucial for meeting timing requirements and reducing power consumption.
 
 - **Clock Tree Verification**: Once the clock tree synthesis is complete, it is essential to verify the clock tree using static timing analysis (STA) to ensure that timing requirements are met and there are no violations.
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/a08e952b-1f61-4024-b3cc-ddfb4ca396d6)
+
+- ![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/61ceede8-6e24-4232-bf0f-db79ad99efc1)
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/05848815-4551-4ac2-9c1c-023e6aacd229)
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/ef4f8956-20bb-47e1-ad32-821c1ada7d26)
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/1e6f1411-04b5-4b65-a779-f4152adb2a5f)
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/37a6e034-19d2-461e-9a2e-814e0b6eadab)
 
 ### Conclusion
 
@@ -476,6 +520,15 @@ A well-designed clock tree is essential for the overall performance and reliabil
 # SKY130 DAY 5: Final Steps for RTL2GDS using TritonRoute and OpenSTA
 ## Routing and Design Check [DRC]
 ### Understanding Maze Routing and Lee's Algorithm
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/897ecc74-2f63-4163-9f08-78a25e6eb338)
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/d6c269bb-0752-4723-a81f-7d59f1262a7f)
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/3dd3f9c6-8a59-4d00-9eba-bfb708c4e190)
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/a4d7a4b6-aebc-469c-9acd-746df5a32ced)
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/4dc1aad9-7872-4f12-b905-6079a975fab0)
 
 Routing involves finding the most optimal path between two elements, such as clocks or flip-flops. Various routing algorithms exist, including the Steiner Tree algorithm and the Line Search algorithm. One notable algorithm is **Maze Routing**, specifically Lee's Algorithm (Lee 1961).
 
@@ -505,6 +558,12 @@ Routing not only connects points but must also adhere to specific rules. For exa
 
 The power and ground rails have a pitch of 2.72µm, so the custom inverter cell also has a height of 2.72µm to ensure proper powering. All cells have the same height but varying widths.
 
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/996e0035-7b54-41ab-9d07-d3dfe0c85572)
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/2446ce37-45f0-4523-893c-3b3e29b8d0b3)
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/924e5d75-5372-41d2-a001-f1c5fcc8b428)
+
 ### Basics of Global and Detail Routing and Configuring TritonRoute
 
 TritonRoute is used for routing through the `run_routing` command. The routing stage is critical and can be executed using open-source or commercial tools, divided into two phases:
@@ -525,12 +584,27 @@ The Mixed Integer Linear Programming (MILP) method is used to find the optimal s
 
 After running the `run_routing` command, both global and detail routing are completed, with DRC violations reduced to 0. The final GDSII file is ready for fabrication and can be viewed using MAGIC.
 
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/09b33954-b27d-43eb-ac2a-a0d54ad0e8cb)
+
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/9d1238d5-a9c4-4d93-96c1-45f8cfc0a396)
+
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/98b11f13-7af4-4cd7-8094-a92a5ac198f8)
+
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/6563bf51-fec3-40b6-8307-17791f7ca2b7)
+
 ### Parasitic Extraction
 
 OpenLANE does not include a SPEF extraction tool, so a separate tool in the `/home/vsduser/Desktop/work/tools/SPEF_EXTRACTOR` directory is used. Follow these steps for extraction:
 
 1. Go to the directory containing the SPEF extraction tool, which includes a Python file called `main.py` and LEF & DEF files.
 2. Use the following command to create the SPEF file:
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/841cbb4d-3b6a-4909-a28c-8bcccb499b97)
+
 
 ```bash
 python3 main.py /home/vsduser/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_05-49/tmp/merged.lef  /home/vsduser/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_05-49/tmp/routing/picorv32a.def
@@ -543,3 +617,12 @@ The SPEF file will be saved in the same location as the DEF file: `/home/vsduser
 The last stage involves extracting the GDSII file for fabrication using the `run_magic` command. This command streams the GDSII file located at `runs/26-03_05-49/results/magic/picorv32a.gds`. The GDSII file can then be opened and viewed using MAGIC.
 
 This completes the final steps for RTL2GDS using TritonRoute and OpenSTA, culminating in the fabrication-ready GDSII file.
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/36d703a9-e9d8-435b-989c-deb7d2524ac4)
+
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/c3bb1a0a-a1fd-4626-b6ca-5d43685ef681)
+
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/364078a0-fe52-44da-98cf-842bacd4f01e)
+
+![image](https://github.com/HarryMonteno/Rishabh-TR-VSDIAT-AdvancedPhysicalDesignUsingOpenLANE/assets/88733631/41ceeff0-ad99-4050-bb76-26aa939d76d9)
